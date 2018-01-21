@@ -1,0 +1,245 @@
+@import 'reset'
+@import 'variable'
+@import 'base' 
+.nav
+    position: fixed 
+    box-sizing: border-box
+    top: 0
+    left: 0
+    width: 100%
+    height: 80px
+    padding: 30px 0px 10px 10px
+    background-color: $bgColor
+    z-index: 10
+.nav-content
+    // &>*
+    //     display: inline-block
+    display: flex    
+    text-align: right
+    .icon-logo
+        // float: left
+        align-self: flex-start
+        flex: 3
+    .nav-list
+        flex: 10            
+        width: 300px       
+    .nav-list .nav-item
+        position: relative
+        display: inline-block
+        height: 100%
+        padding: 0 20px 20px 20px
+        &:hover>.sub-list>.sub-item
+            height: auto
+            padding: 10px
+        &:last-child:before
+            content: 'new'
+            position: absolute
+            right: 0
+            top: -13px
+            font-size: $fontSmall
+            color: $withBgText
+            background-color: $deepOrange
+            padding: 2px
+            border: 1px solid $deepOrange
+            border-radius: 8px
+            
+        a
+            color: $withBgText
+            &:hover
+                color: $lightOrange 
+        .sub-list
+            position: absolute
+            top: 50px
+            left: 0                    
+            cursor: pointer
+            background-color: $bgColor         
+            .sub-item
+                overflow: hidden
+                box-sizing: border-box            
+                width: 100px
+                height: 0                              
+                padding: 0px
+                text-align: center
+                transition: all .3s
+    .btn-wrapper
+        flex: 3
+        a
+            transition: all .3s
+            padding: 6px 20px
+            margin-right: 10px
+            border: 1px solid  white
+            border-radius: 3px
+            color: $withBgText
+        .login:hover
+            color: $lightOrange
+            border-color: $lightOrange
+        .regist                   
+            background-color: $deepOrange
+            border-color: $deepOrange
+            &:hover
+                background-color: $lightOrange
+                border-color: $lightOrange
+
+.header
+    background: url(../img/header.jpg) 50% no-repeat
+    background-size: cover
+    height 952px
+    // padding-top: 416px    
+    color: #ffffff
+    .header-content
+        padding-top: 416px
+        h1
+            margin-bottom: 30px
+        p
+            margin-bottom: 20px
+        .header-title
+            font-size: 50px
+        .header-sub
+            font-size: $fontBig
+        .push
+            padding: 15px 80px
+            font-size: $fontBig+2
+section 
+    padding-top: 135px !important
+.advantage
+    width: 100%
+    height: 750px
+    box-sizing: border-box  
+    .advantage-title
+        text-align: center
+        font-size: $fontBig+15px
+        line-height: $fontBig+15px     
+    .advantage-content
+        padding-top: 100px
+        text-align: center
+        .advantage-list
+            display: inline-block
+            margin-right: 30px            
+            .advantage-item
+                display: inline-block
+                margin-left: 50px
+                .advantage-item-title
+                    font-size: $fontBig+5
+                    padding-top: 25px
+.banner-why   
+    overflow: hidden
+    box-sizing: border-box
+    height: 520px
+    background: url('../img/banner-why.jpg')
+    background-size: cover
+    .banner-content
+        text-align: center
+        color: white
+        .banner-title
+            font-size: $fontBig + 10
+            margin-bottom: 50px
+        .desc
+            font-size: $fontBig
+            margin-bottom: 25px
+        .banner-btn
+            padding: 10px 50px
+            font-size: $fontBig
+.solution
+    .solution-title
+        text-align: center
+        font-size: $fontBig+15
+    .solution-content
+        position: relative
+        .solution-tab
+            position: absolute
+            right: 0
+            .tab-item
+                display: inline-block
+                padding: 10px 45px
+                border: 1px solid #bbb
+                margin-left: 30px
+                cursor: pointer
+                transition: all .3s
+                &:hover
+                    color: $lightOrange
+                    border-color: $lightOrange
+            .tab-item-active
+                color: $lightOrange
+                border-color: $lightOrange
+        .tab-content            
+            .solution-item
+                display: none             
+                .solution-img
+                    flex: 5
+                .item-content
+                    flex: 7
+                    padding-top: 100px
+                    padding-left: 20px                   
+                    .item-title
+                        font-size: $fontBig+20
+                        margin-bottom: 30px
+                    .item-desc
+                        font-size: $fontNormal
+                        margin-bottom: 20px
+                        line-height: $fontNormal+10px 
+            .solution-item-active
+                display: flex
+        .solution-btn
+            position: absolute                       
+            padding: 10px 50px
+            left: 50%
+            margin-left: -100px
+            margin-top: -50px
+
+.banner-partner
+    position: relative
+    height: 380px
+    overflow: hidden
+    background: url('../img/banner-partner.jpg')
+    background-clip: content-box
+    .banner-content
+        text-align: center
+        color: white
+        .banner-item
+            display: none
+            .banner-img
+                margin-bottom: 20px
+            .name
+                font-size: $fontNormal
+                margin-bottom: 15px
+            .desc
+                font-size: $fontBig
+        .banner-item-active
+            display: block
+    .banner-tab
+        margin-top: 30px
+        text-align: center
+        .tab-item
+            display: inline-block
+            padding: 0 10px
+            cursor: pointer
+        .tab-item:after
+            content: ''
+            display: block
+            height: 3px
+            width: 30px
+            background-color: $deepOrange 
+
+.footer
+    min-height: 384px
+    background-color: #333
+    color: #aaa 
+    .footer-content
+        display: flex
+        padding-top: 50px       
+        .footer-list
+            flex: 1                     
+            .footer-link-item
+                display: block
+                height: 45px
+                cursor: pointer
+                &:first-child a
+                        color: white
+                a                    
+                    &:hover
+                        color: white       
+            
+        
+            
+  
+        
