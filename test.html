@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+  <style>
+    #test {
+      width: 100px;
+      height: 100px;
+      background-color: black
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="test"></div>
+  <script>
+    var x = 10
+    var foo = {
+      x: 20,
+      bar: function () {
+        x = 30
+        console.log(this)
+        return this.x
+      }
+    }
+    var test = foo.bar //添加引用后由于test是window的属性,this指向window
+
+    // foo.bar()//20
+    // (foo.bar)()//20
+    // (foo.bar = foo.bar)()//30
+    // (foo.bar,foo.bar)()//30
+    // foo.bar.call(window)//30
+    // foo.bar.call(foo)//20
+    // console.log(foo.bar = foo.bar)
+    //localStorage是本地存储,在这里是取值而非创建,刷新浏览器不会初始化storage的值
+    // ---------------------------------------------------------
+    // var storage = window.localStorage
+
+    // function addStorage() {
+    //   storage[Math.ceil(Math.random() * 10)] = Math.ceil(Math.random() * 10)
+    // }
+    // storage.item = {
+    //   name: '红米mix2',
+    //   price: '2500'
+    // }
+    // addStorage()
+    // storage.setItem('setItem', '要不要换手机呢')
+    // var getItem = storage.getItem('setItem')
+    // console.log(storage)
+    // console.log(storage.key(0))
+    // console.log(Object.keys(storage))
+    // $(function(){
+    //     $('#test').animate({width:'50px',height:'50px'},500)
+    // })
+    // ---------------------------------------------------------
+    // var data = {
+    //   a: '1'
+    // }
+
+    // function safeGet(data, path) {
+    //   try {
+    //     return path.split('.').reduce((o, k) => {
+    //       return o[k]
+    //     }, data)
+    //   } catch (e) {
+    //     return void undefined
+    //   }
+
+    // }
+    // console.log(safeGet(data, 'a.b'))
+    // ---------------------------------------------------------
+    // 检测两个矩形是否重合
+    //  var rect1 = {
+    //    x:100,
+    //    y:100,
+    //    width:200,
+    //    height:100
+    //  }
+    //  var rect2 = {
+    //    x:300,
+    //    y:200,
+    //    width:300,
+    //    height:200
+    //  }
+    //  function collide(rect1,rect2){
+    //   var maxX =Math.max(rect1.x+rect1.width,rect2.x+rect2.width)
+    //   var maxY = Math.max(rect1.y+rect1.height,rect2.y+rect2.height)
+    //   var minX = Math.min(rect1.x,rect2.x)
+    //   var minY = Math.min(rect1.y,rect2.y)
+    //   if(maxX-minX<=rect1.width+rect2.width&&maxY-minY<=rect1.height+rect2.height){
+    //     return true
+    //   }else{
+    //     return false
+    //   }
+    //  }
+    //  console.log(collide(rect1,rect2))
+    // ---------------------------------------------------------
+    //  数组遍历插入
+    var arr = ['item1', 'item2', 'item3', 'item4', 'item5']
+    var insert = [{
+        content: 'insert1',
+        index: 2,
+      }, {
+        content: 'insert2',
+        index: 0
+      },
+      {
+        content: 'insert3',
+        index: 3
+      }
+    ]
+
+
+    // function ins(arr, insert) {
+      // 处理原数组index排序
+      // var narr = []
+      // insert.map(item=>{
+      //   narr.push({
+
+      //   })
+      // })
+    //   var preIndex
+    //   var addIndex = 0
+    //   insert.map(item => {
+    //     if (!preIndex || preIndex >= item.index) {
+    //       addIndex = 0
+    //     } else {
+    //       addIndex = 1
+    //     }
+    //     arr.splice(item.index + addIndex, 0, item.content)
+    //     preIndex = item.index
+    //   })
+    //   return arr
+    // }
+
+    //利用奇偶性扩充数组
+    //分别记录扩充数组两部分的下标
+    //根据下标插值
+    //使用filter将标志位过滤,返回数组
+    // function ins(arr,insert){
+    //   var narr = []
+    //   var preArrIndex = 0
+    //   var insertArrIndex = 0
+    //   for(let i = 0;i<arr.length*2;i++){
+    //     if(i%2==0){
+    //       narr[i]='#'
+    //       insert.map(item=>{
+    //         if(item.index == insertArrIndex){
+    //           narr[i] = item.content             
+    //         }
+    //       })        
+    //       insertArrIndex++
+    //     }else{
+    //       narr[i]=arr[preArrIndex]
+    //       preArrIndex++
+    //     }
+    //   }
+    //  narr=narr.filter(item=>{
+    //    return item!='#'
+    //  })
+    //   return narr
+    // }
+    // console.log(ins(arr, insert))
+
+    function ins(items,sections){
+      sections.sort((a,b)=>b.index-a.index).forEach(section=>{
+        items.splice(section.index,0,section.content)       
+      })
+      return items
+    }
+    console.log(ins(arr, insert))
+
+  </script>
+</body>
+
+</html>

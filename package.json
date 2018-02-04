@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/hym19940701/advert/issues"
   },
-  "homepage": "https://github.com/hym19940701/advert#readme",
+  "homepage": "http://gogou.xyz/advert/",
   "dependencies": {
     "autoprefixer": "^7.2.5",
     "css-loader": "^0.28.9",

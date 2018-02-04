@@ -1,8 +1,8 @@
 @import 'reset'
 @import 'variable'
-@import 'base' 
+@import 'base'
 .nav
-    position: fixed 
+    position: fixed
     box-sizing: border-box
     top: 0
     left: 0
@@ -14,15 +14,15 @@
 .nav-content
     // &>*
     //     display: inline-block
-    display: flex    
+    display: flex
     text-align: right
     .icon-logo
         // float: left
         align-self: flex-start
         flex: 3
     .nav-list
-        flex: 10            
-        width: 300px       
+        flex: 10
+        width: 300px
     .nav-list .nav-item
         position: relative
         display: inline-block
@@ -42,22 +42,22 @@
             padding: 2px
             border: 1px solid $deepOrange
             border-radius: 8px
-            
+
         a
             color: $withBgText
             &:hover
-                color: $lightOrange 
+                color: $lightOrange
         .sub-list
             position: absolute
             top: 50px
-            left: 0                    
+            left: 0
             cursor: pointer
-            background-color: $bgColor         
+            background-color: $bgColor
             .sub-item
                 overflow: hidden
-                box-sizing: border-box            
+                box-sizing: border-box
                 width: 100px
-                height: 0                              
+                height: 0
                 padding: 0px
                 text-align: center
                 transition: all .3s
@@ -73,7 +73,7 @@
         .login:hover
             color: $lightOrange
             border-color: $lightOrange
-        .regist                   
+        .regist
             background-color: $deepOrange
             border-color: $deepOrange
             &:hover
@@ -81,10 +81,10 @@
                 border-color: $lightOrange
 
 .header
-    background: url(../img/header.jpg) 50% no-repeat
+    background: url('../img/header.jpg') 50% no-repeat
     background-size: cover
     height 952px
-    // padding-top: 416px    
+    // padding-top: 416px
     color: #ffffff
     .header-content
         padding-top: 416px
@@ -99,29 +99,29 @@
         .push
             padding: 15px 80px
             font-size: $fontBig+2
-section 
+section
     padding-top: 135px !important
 .advantage
     width: 100%
     height: 750px
-    box-sizing: border-box  
+    box-sizing: border-box
     .advantage-title
         text-align: center
         font-size: $fontBig+15px
-        line-height: $fontBig+15px     
+        line-height: $fontBig+15px
     .advantage-content
         padding-top: 100px
         text-align: center
         .advantage-list
             display: inline-block
-            margin-right: 30px            
+            margin-right: 30px
             .advantage-item
                 display: inline-block
                 margin-left: 50px
                 .advantage-item-title
                     font-size: $fontBig+5
                     padding-top: 25px
-.banner-why   
+.banner-why
     overflow: hidden
     box-sizing: border-box
     height: 520px
@@ -161,27 +161,27 @@ section
             .tab-item-active
                 color: $lightOrange
                 border-color: $lightOrange
-        .tab-content            
+        .tab-content
             .solution-item
-                display: none               
-                transition: all .3             
+                display: none
+                transition: all .3
                 .solution-img
                     flex: 5
                 .item-content
                     flex: 7
                     padding-top: 100px
-                    padding-left: 20px                   
+                    padding-left: 20px
                     .item-title
                         font-size: $fontBig+20
                         margin-bottom: 30px
                     .item-desc
                         font-size: $fontNormal
                         margin-bottom: 20px
-                        line-height: $fontNormal+10px 
+                        line-height: $fontNormal+10px
             .solution-item-active
-                display: flex                
+                display: flex
         .solution-btn
-            position: absolute                       
+            position: absolute
             padding: 10px 50px
             left: 50%
             margin-left: -100px
@@ -213,33 +213,33 @@ section
         .tab-item
             display: inline-block
             padding: 0 10px
-            cursor: pointer      
+            cursor: pointer
             height: 3px
             width: 30px
-            background-color: #ccc 
+            background-color: #ccc
         .tab-item-active
             background-color: $deepOrange
 
 .footer
     min-height: 384px
     background-color: #333
-    color: #aaa 
+    color: #aaa
     .footer-content
         display: flex
-        padding-top: 50px       
+        padding-top: 50px
         .footer-list
-            flex: 1                     
+            flex: 1
             .footer-link-item
                 display: block
                 height: 45px
                 cursor: pointer
                 &:first-child a
                         color: white
-                a                    
+                a
                     &:hover
                         color: white
 
-        
-            
-  
-        
+
+
+
+

@@ -50,7 +50,7 @@ module.exports = {
   },
   plugins: [
     new htmlWebpackPlugin({
-      filename: '../index.html',
+      filename: 'index.html',
       template: 'htmlTpl.html',
     }),
   ],
