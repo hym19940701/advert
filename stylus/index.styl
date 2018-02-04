@@ -163,7 +163,8 @@ section
                 border-color: $lightOrange
         .tab-content            
             .solution-item
-                display: none             
+                display: none               
+                transition: all .3             
                 .solution-img
                     flex: 5
                 .item-content
@@ -178,7 +179,7 @@ section
                         margin-bottom: 20px
                         line-height: $fontNormal+10px 
             .solution-item-active
-                display: flex
+                display: flex                
         .solution-btn
             position: absolute                       
             padding: 10px 50px
@@ -212,13 +213,12 @@ section
         .tab-item
             display: inline-block
             padding: 0 10px
-            cursor: pointer
-        .tab-item:after
-            content: ''
-            display: block
+            cursor: pointer      
             height: 3px
             width: 30px
-            background-color: $deepOrange 
+            background-color: #ccc 
+        .tab-item-active
+            background-color: $deepOrange
 
 .footer
     min-height: 384px
@@ -237,8 +237,8 @@ section
                         color: white
                 a                    
                     &:hover
-                        color: white       
-            
+                        color: white
+
         
             
   
